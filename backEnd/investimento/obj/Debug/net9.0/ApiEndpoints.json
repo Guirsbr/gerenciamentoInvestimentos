@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "investimento.Controllers.InvestimentoController",
+    "Method": "Add",
+    "RelativePath": "api/v1/investimento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "investimentoView",
+        "Type": "investimento.ViewModel.InvestimentoViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "investimento.Controllers.InvestimentoController",
+    "Method": "Get",
+    "RelativePath": "api/v1/investimento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
