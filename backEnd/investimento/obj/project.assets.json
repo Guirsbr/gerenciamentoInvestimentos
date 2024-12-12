@@ -784,23 +784,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guiem\\.nuget\\packages\\": {},
+    "C:\\Users\\Guilherme\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\guiem\\OneDrive\\Documentos\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\investimento.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\investimento.csproj",
       "projectName": "investimento",
-      "projectPath": "C:\\Users\\guiem\\OneDrive\\Documentos\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\investimento.csproj",
-      "packagesPath": "C:\\Users\\guiem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\guiem\\OneDrive\\Documentos\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\obj\\",
+      "projectPath": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\investimento.csproj",
+      "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\guiem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
