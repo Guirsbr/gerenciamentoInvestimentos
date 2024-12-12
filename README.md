@@ -1,2 +1,2 @@
 # gerenciamento_cartoes
-Software pessoal para gerenciamento de cartões de alimentação
+Software pessoal para gerenciamento dos meus investimentos
