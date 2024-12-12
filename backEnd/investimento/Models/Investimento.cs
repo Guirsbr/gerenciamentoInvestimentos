@@ -17,6 +17,7 @@ namespace investimento.Models
         public Investimento(string rentabilidade)
         {
             this.rentabilidade = rentabilidade;
+            data = DateTime.UtcNow;
         }
     }
 }
