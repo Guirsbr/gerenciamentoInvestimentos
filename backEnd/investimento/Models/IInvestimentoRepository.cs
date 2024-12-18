@@ -4,6 +4,6 @@
     {
         void Add(Investimento investimento);
 
-        List<Investimento> Get();//Talvez GetAll()
+        List<Investimento> Get();
     }
 }

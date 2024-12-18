@@ -18,7 +18,9 @@ namespace investimento.Controllers
         [HttpPost]
         public IActionResult Add(InvestimentoViewModel investimentoView)
         {
-            var investimento = new Investimento(investimentoView.rentabilidade);
+            var investimento = new Investimento(
+                investimentoView.valor_inicial, investimentoView.valor_atual, investimentoView.rentabilidade, 
+                investimentoView.id_banco, investimentoView.id_tipo_investimento, investimentoView.id_usuario);
             _investimentoRepository.Add(investimento);
             return Ok();
         }

@@ -10,7 +10,7 @@ namespace investimento.Infraestrutura
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
               => optionsBuilder.UseNpgsql(
                   "Server=localhost;" +
-                  "Port=5432;Database=investimentosdb;" +
+                  "Port=5432;Database=gerenciamento_investimentos_db;" +
                   "User Id=postgres;" +
                   "Password=12345;");
     }
