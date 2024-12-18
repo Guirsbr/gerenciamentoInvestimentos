@@ -1,4 +1,4 @@
-﻿namespace investimento.Models
+﻿namespace investimento.Domain.Models
 {
     public interface IInvestimentoRepository
     {

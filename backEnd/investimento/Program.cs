@@ -1,5 +1,5 @@
-using investimento.Infraestrutura;
-using investimento.Models;
+using investimento.Domain.Models;
+using investimento.Infrastructure.Repositories;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);

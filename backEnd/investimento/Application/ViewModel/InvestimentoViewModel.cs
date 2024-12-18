@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace investimento.ViewModel
+﻿namespace investimento.Application.ViewModel
 {
     public class InvestimentoViewModel
     {

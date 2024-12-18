@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using investimento.Models;
+using investimento.Domain.Models;
 
-namespace investimento.Infraestrutura
+namespace investimento.Infrastructure
 {
     public class ConnectionContext : DbContext
     {

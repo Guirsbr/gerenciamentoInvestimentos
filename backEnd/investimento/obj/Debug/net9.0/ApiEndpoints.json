@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "investimentoView",
-        "Type": "investimento.ViewModel.InvestimentoViewModel",
+        "Type": "investimento.Application.ViewModel.InvestimentoViewModel",
         "IsRequired": true
       }
     ],

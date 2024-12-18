@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\models\\investimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\models\\investimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\models\\iinvestimentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\models\\iinvestimentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\infraestrutura\\investimentorepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\infraestrutura\\investimentorepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\infraestrutura\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\infraestrutura\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\controllers\\investimentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\controllers\\investimentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\viewmodel\\investimentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\viewmodel\\investimentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\infrastructure\\repositories\\investimentorepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\infrastructure\\repositories\\investimentorepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\infrastructure\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\infrastructure\\connectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\domain\\models\\iinvestimentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\domain\\models\\iinvestimentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\application\\viewmodel\\investimentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\application\\viewmodel\\investimentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|c:\\users\\guilherme\\documents\\github\\gerenciamentoinvestimentos\\backend\\investimento\\domain\\models\\investimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63A4077-B658-4E6B-A7B4-91D2D9F42575}|investimento\\investimento.csproj|solutionrelative:investimento\\domain\\models\\investimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,29 +42,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Program.cs",
+              "RelativeDocumentMoniker": "investimento\\Program.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Program.cs",
+              "RelativeToolTip": "investimento\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T21:15:01.445Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ConnectionContext.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infraestrutura\\ConnectionContext.cs",
-              "RelativeDocumentMoniker": "investimento\\Infraestrutura\\ConnectionContext.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infraestrutura\\ConnectionContext.cs",
-              "RelativeToolTip": "investimento\\Infraestrutura\\ConnectionContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infrastructure\\ConnectionContext.cs",
+              "RelativeDocumentMoniker": "investimento\\Infrastructure\\ConnectionContext.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infrastructure\\ConnectionContext.cs",
+              "RelativeToolTip": "investimento\\Infrastructure\\ConnectionContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T00:41:32.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "IInvestimentoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Models\\IInvestimentoRepository.cs",
-              "RelativeDocumentMoniker": "investimento\\Models\\IInvestimentoRepository.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Models\\IInvestimentoRepository.cs",
-              "RelativeToolTip": "investimento\\Models\\IInvestimentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Domain\\Models\\IInvestimentoRepository.cs",
+              "RelativeDocumentMoniker": "investimento\\Domain\\Models\\IInvestimentoRepository.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Domain\\Models\\IInvestimentoRepository.cs",
+              "RelativeToolTip": "investimento\\Domain\\Models\\IInvestimentoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T00:11:52.275Z",
@@ -83,37 +100,37 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "InvestimentoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\ViewModel\\InvestimentoViewModel.cs",
-              "RelativeDocumentMoniker": "investimento\\ViewModel\\InvestimentoViewModel.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\ViewModel\\InvestimentoViewModel.cs",
-              "RelativeToolTip": "investimento\\ViewModel\\InvestimentoViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Application\\ViewModel\\InvestimentoViewModel.cs",
+              "RelativeDocumentMoniker": "investimento\\Application\\ViewModel\\InvestimentoViewModel.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Application\\ViewModel\\InvestimentoViewModel.cs",
+              "RelativeToolTip": "investimento\\Application\\ViewModel\\InvestimentoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T03:02:13.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "InvestimentoController.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Controllers\\InvestimentoController.cs",
               "RelativeDocumentMoniker": "investimento\\Controllers\\InvestimentoController.cs",
               "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Controllers\\InvestimentoController.cs",
               "RelativeToolTip": "investimento\\Controllers\\InvestimentoController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T00:25:20.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Investimento.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Models\\Investimento.cs",
-              "RelativeDocumentMoniker": "investimento\\Models\\Investimento.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Models\\Investimento.cs",
-              "RelativeToolTip": "investimento\\Models\\Investimento.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Domain\\Models\\Investimento.cs",
+              "RelativeDocumentMoniker": "investimento\\Domain\\Models\\Investimento.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Domain\\Models\\Investimento.cs",
+              "RelativeToolTip": "investimento\\Domain\\Models\\Investimento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T02:49:38.927Z",
               "EditorCaption": ""
@@ -122,11 +139,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "InvestimentoRepositiry.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infraestrutura\\InvestimentoRepositiry.cs",
-              "RelativeDocumentMoniker": "investimento\\Infraestrutura\\InvestimentoRepositiry.cs",
-              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infraestrutura\\InvestimentoRepositiry.cs",
-              "RelativeToolTip": "investimento\\Infraestrutura\\InvestimentoRepositiry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infrastructure\\Repositories\\InvestimentoRepositiry.cs",
+              "RelativeDocumentMoniker": "investimento\\Infrastructure\\Repositories\\InvestimentoRepositiry.cs",
+              "ToolTip": "C:\\Users\\Guilherme\\Documents\\GitHub\\gerenciamentoInvestimentos\\backEnd\\investimento\\Infrastructure\\Repositories\\InvestimentoRepositiry.cs",
+              "RelativeToolTip": "investimento\\Infrastructure\\Repositories\\InvestimentoRepositiry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T02:54:06.095Z",
               "EditorCaption": ""

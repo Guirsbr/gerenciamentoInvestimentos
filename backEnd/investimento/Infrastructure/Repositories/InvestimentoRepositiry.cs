@@ -1,6 +1,6 @@
-﻿using investimento.Models;
+﻿using investimento.Domain.Models;
 
-namespace investimento.Infraestrutura
+namespace investimento.Infrastructure.Repositories
 {
     public class InvestimentoRepositiry : IInvestimentoRepository
     {

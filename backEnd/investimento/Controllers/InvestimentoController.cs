@@ -1,5 +1,5 @@
-﻿using investimento.Models;
-using investimento.ViewModel;
+﻿using investimento.Application.ViewModel;
+using investimento.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace investimento.Controllers

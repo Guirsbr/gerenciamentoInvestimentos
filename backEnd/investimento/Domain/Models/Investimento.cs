@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace investimento.Models
+namespace investimento.Domain.Models
 {
     [Table("investimento")]
     public class Investimento
     {
         [Key]
-        public int id {  get; private set; }
+        public int id { get; private set; }
         [Required]
         public double valor_inicial { get; private set; }
         [Required]
@@ -26,7 +26,7 @@ namespace investimento.Models
         public int id_usuario { get; private set; }
 
         public Investimento(
-            double valor_inicial, double valor_atual, string rentabilidade, 
+            double valor_inicial, double valor_atual, string rentabilidade,
             int id_banco, int id_tipo_investimento, int id_usuario)
         {
             this.valor_inicial = valor_inicial;
