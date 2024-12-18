@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddTransient<IInvestimentoRepository, InvestimentoRepositiry>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepositiry>();
 
 var app = builder.Build();
 
