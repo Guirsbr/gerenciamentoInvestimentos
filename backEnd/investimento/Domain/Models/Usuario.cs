@@ -24,10 +24,5 @@ namespace investimento.Domain.Models
             this.senha = senha;
             this.data_cadastro = DateTime.UtcNow;
         }
-
-        public Usuario(string nome)
-        {
-            this.nome = nome;
-        }
     }
 }

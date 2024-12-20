@@ -1,5 +1,26 @@
 [
   {
+    "ContainingType": "investimento.Controllers.AuthController",
+    "Method": "Auth",
+    "RelativePath": "api/v1/auth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "senha",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "investimento.Controllers.InvestimentoController",
     "Method": "Add",
     "RelativePath": "api/v1/investimento",

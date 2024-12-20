@@ -1,5 +1,6 @@
 ﻿using investimento.Application.ViewModel;
 using investimento.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace investimento.Controllers
@@ -15,6 +16,7 @@ namespace investimento.Controllers
             _usuarioRepository = usuarioRepository ?? throw new ArgumentNullException(nameof(usuarioRepository));
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Add(UsuarioViewModel usuarioView)
         {
@@ -23,6 +25,7 @@ namespace investimento.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {

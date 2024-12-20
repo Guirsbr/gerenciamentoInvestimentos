@@ -120,3 +120,11 @@ C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investime
 C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\obj\Debug\net9.0\investimento.pdb
 C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\obj\Debug\net9.0\investimento.genruntimeconfig.cache
 C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\obj\Debug\net9.0\ref\investimento.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Guilherme\Documents\GitHub\gerenciamentoInvestimentos\backEnd\investimento\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
