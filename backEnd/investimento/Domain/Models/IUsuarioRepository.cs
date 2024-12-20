@@ -5,5 +5,9 @@
         void Add(Usuario usuario);
 
         List<Usuario> Get();
+
+        List<Usuario> GetUserByEmail(string email);
+
+        List<Usuario> GetUserByEmailAndPassword(string email, string senha);
     }
 }

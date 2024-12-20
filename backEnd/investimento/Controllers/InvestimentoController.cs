@@ -10,10 +10,12 @@ namespace investimento.Controllers
     public class InvestimentoController : ControllerBase
     {
         private readonly IInvestimentoRepository _investimentoRepository;
+        private readonly ILogger<UsuarioController> _logger;
 
-        public InvestimentoController(IInvestimentoRepository investimentoRepository)
+        public InvestimentoController(IInvestimentoRepository investimentoRepository, ILogger<UsuarioController> logger)
         {
             _investimentoRepository = investimentoRepository ?? throw new ArgumentNullException(nameof(investimentoRepository));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [Authorize]
