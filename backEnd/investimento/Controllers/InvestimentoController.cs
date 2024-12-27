@@ -18,7 +18,6 @@ namespace investimento.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [Authorize]
         [HttpPost]
         public IActionResult Add(InvestimentoViewModel investimentoView)
         {
@@ -29,7 +28,6 @@ namespace investimento.Controllers
             return Ok();
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {

@@ -17,7 +17,6 @@ namespace investimento.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
