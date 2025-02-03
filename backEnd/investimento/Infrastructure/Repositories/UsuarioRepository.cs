@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace investimento.Infrastructure.Repositories
 {
-    public class UsuarioRepositiry : IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private readonly ConnectionContext _context = new ConnectionContext();
         public void Add(Usuario usuario)

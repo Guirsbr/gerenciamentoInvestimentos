@@ -17,23 +17,30 @@ namespace investimento.Controllers
         }
 
         [HttpPost]
-        public IActionResult Auth(string email, string senha)
+        public IActionResult Auth(LoginRequest login)
         {
-            var usuario = _usuarioRepository.GetUserByEmail(email);
+            var usuario = _usuarioRepository.GetUserByEmail(login.email);
+
+            var authResult = new AuthResult("", false, "");
 
             if (!usuario.Any())
             {
-                return BadRequest("Usúario não encontrado");
+                return Ok(authResult);
             }
 
-            if (senha != usuario[0].senha)
+            if (login.senha != usuario[0].senha)
             {
-                return BadRequest("Senha incorreta");
+                return Ok(authResult);
             }
 
             var token = TokenService.GenerateToken(new Usuario(
                 usuario[0].id, usuario[0].nome, usuario[0].email, usuario[0].senha, usuario[0].data_cadastro));
-            return Ok(token);
+
+            authResult.token = (string)token;
+            authResult.result = true;
+            authResult.nome = usuario[0].nome;
+
+            return Ok(authResult);
         }
     }
 }

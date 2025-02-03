@@ -14,9 +14,19 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddTransient<IInvestimentoRepository, InvestimentoRepositiry>();
-builder.Services.AddTransient<IUsuarioRepository, UsuarioRepositiry>();
+builder.Services.AddTransient<IInvestimentoRepository, InvestimentoRepository>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
+
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: "MyPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
 
 var key = Encoding.ASCII.GetBytes(Key.Secret);
 
@@ -49,6 +59,8 @@ if (app.Environment.IsDevelopment())
         options.DefaultHttpClient = new(ScalarTarget.CSharp, ScalarClient.HttpClient);
     });
 }
+
+app.UseCors("MyPolicy");
 
 app.UseHttpsRedirection();
 

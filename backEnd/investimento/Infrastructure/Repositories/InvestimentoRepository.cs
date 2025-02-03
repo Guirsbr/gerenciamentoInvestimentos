@@ -2,7 +2,7 @@
 
 namespace investimento.Infrastructure.Repositories
 {
-    public class InvestimentoRepositiry : IInvestimentoRepository
+    public class InvestimentoRepository : IInvestimentoRepository
     {
         private readonly ConnectionContext _context = new ConnectionContext();
 

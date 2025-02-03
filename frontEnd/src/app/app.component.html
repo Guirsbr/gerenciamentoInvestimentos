@@ -1,23 +1,7 @@
-<h1>Teste GET /investimento</h1>
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>valor_inicial</th>
-      <th>valor_atual</th>
-      <th>rentabilidade</th>
-      <th>data_atualizacao</th>
-      <th>data_investimento</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let investimento of investimentos">
-      <td> {{investimento.id}}</td>
-      <td> {{investimento.valor_inicial}}</td>
-      <td> {{investimento.valor_atual}}</td>
-      <td> {{investimento.rentabilidade}}</td>
-      <td> {{investimento.data_atualizacao}}</td>
-      <td> {{investimento.data_investimento}}</td>
-    </tr>
-  </tbody>
-</table>
+<app-login></app-login>
+<div *ngFor="let usuario of usuarios$ | async">
+    <p> {{ usuario.email }}</p>
+</div>
+
+<p> Token: {{ (authResult$ | async)?.token }} </p>
+<p> Resultado: {{ (authResult$ | async)?.result }} </p>

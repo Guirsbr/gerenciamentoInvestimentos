@@ -1,26 +1,50 @@
 import { Component } from '@angular/core';
 import { InvestimentoService } from './services/investimento.service';
-import { Investimento } from './models/investimento.service';
+import { Investimento } from './models/investimento.models';
+import { UsuarioService } from './services/usuario.service';
+import { Usuario } from './models/usuario.models';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from "./login/login.component";
+import { Observable } from 'rxjs';
+import { AuthResult } from './models/authResult.models';
+import { LoginRequest } from './models/loginRequest.models';
+import { LoginRequestService } from './services/loginRequest.service';
+
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'frontEnd';
 
-  investimentos: Investimento[] = []
+  investimentos$ = new Observable<Investimento[]>();
+  usuarios$ = new Observable<Usuario[]>();
 
-  constructor(private investimentoService: InvestimentoService){
+  authResult$ = new Observable<AuthResult>();
+
+  loginRequest: LoginRequest = {
+    email: "teste@hotmail.com",
+    senha: "12345",
+  };
+
+  constructor(private investimentoService: InvestimentoService, private usuarioService: UsuarioService, private loginRequestService: LoginRequestService){
     this.obterInvestimentosDoUsuario();
+    this.obterUsuariosDoSistema();
+    this.fazerLogin();
   }
 
   obterInvestimentosDoUsuario(){
-    this.investimentoService.obterInvestimentos()
-      .subscribe(investimentos => this.investimentos = investimentos)
+    this.investimentos$ = this.investimentoService.obterInvestimentos();
+  }
+
+  obterUsuariosDoSistema(){
+    this.usuarios$ = this.usuarioService.obterUsuarios();
+  }
+
+  fazerLogin(){
+    this.authResult$ = this.loginRequestService.requestAuth(this.loginRequest);
   }
 }
