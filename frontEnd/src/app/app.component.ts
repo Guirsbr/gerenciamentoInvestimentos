@@ -6,10 +6,6 @@ import { Usuario } from './models/usuario.models';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from "./login/login.component";
 import { Observable } from 'rxjs';
-import { AuthResult } from './models/authResult.models';
-import { LoginRequest } from './models/loginRequest.models';
-import { LoginRequestService } from './services/loginRequest.service';
-
 
 @Component({
   selector: 'app-root',
@@ -23,17 +19,9 @@ export class AppComponent {
   investimentos$ = new Observable<Investimento[]>();
   usuarios$ = new Observable<Usuario[]>();
 
-  authResult$ = new Observable<AuthResult>();
-
-  loginRequest: LoginRequest = {
-    email: "teste@hotmail.com",
-    senha: "12345",
-  };
-
-  constructor(private investimentoService: InvestimentoService, private usuarioService: UsuarioService, private loginRequestService: LoginRequestService){
-    this.obterInvestimentosDoUsuario();
-    this.obterUsuariosDoSistema();
-    this.fazerLogin();
+  constructor(private investimentoService: InvestimentoService, private usuarioService: UsuarioService){
+    // this.obterInvestimentosDoUsuario();
+    // this.obterUsuariosDoSistema();
   }
 
   obterInvestimentosDoUsuario(){
@@ -44,7 +32,4 @@ export class AppComponent {
     this.usuarios$ = this.usuarioService.obterUsuarios();
   }
 
-  fazerLogin(){
-    this.authResult$ = this.loginRequestService.requestAuth(this.loginRequest);
-  }
 }

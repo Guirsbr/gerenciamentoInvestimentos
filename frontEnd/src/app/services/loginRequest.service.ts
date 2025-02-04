@@ -9,7 +9,7 @@ import { AuthResult } from "../models/authResult.models";
 })
 export class LoginRequestService {
 
-    private url = environment.api
+    private url = `${environment.api}/auth`;
 
     constructor(private httpClient: HttpClient) {
     }
@@ -17,7 +17,7 @@ export class LoginRequestService {
     requestAuth(loginRequest: LoginRequest){
         const headers = new HttpHeaders({ "Content-Type": "application/json" });
         
-        return this.httpClient.post<AuthResult>(this.url + "auth", loginRequest, { headers })
+        return this.httpClient.post<AuthResult>(this.url, loginRequest, { headers })
     }
 
 }

@@ -8,13 +8,13 @@ import { Usuario } from "../models/usuario.models";
 })
 export class UsuarioService {
 
-    private url = environment.api
+    private url = `${environment.api}/usuarios`
 
     constructor(private httpClient: HttpClient) {
     }
 
     obterUsuarios(){
-        return this.httpClient.get<Usuario[]>(this.url + "usuarios")
+        return this.httpClient.get<Usuario[]>(this.url)
     }
 
 }

@@ -1,2 +1,17 @@
-<!-- <p> {{ (authResult$ | async)?.token }} </p> -->
-<!-- <p>{{ authResult.result }}</p> -->
+
+<form>
+    <div>
+        <label> Email </label>
+        <input type="text" [(ngModel)]="email" name="email" required>
+    </div>
+
+    <div>
+        <label> Senha </label>
+        <input type="text" [(ngModel)]="senha" name="senha" required>
+    </div>
+
+    <button (click)="fazerLogin()"> Iniciar sessão </button>
+</form>
+
+<p> Token: {{ authResult.token }} </p>
+<p> Resultado: {{ authResult.result }} </p>

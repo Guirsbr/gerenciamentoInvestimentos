@@ -8,13 +8,13 @@ import { Investimento } from "../models/investimento.models";
 })
 export class InvestimentoService {
 
-    private url = environment.api
+    private url = `${environment.api}/investimento`
 
     constructor(private httpClient: HttpClient) {
     }
 
     obterInvestimentos(){
-        return this.httpClient.get<Investimento[]>(this.url + "investimento")
+        return this.httpClient.get<Investimento[]>(this.url)
     }
 
 }
