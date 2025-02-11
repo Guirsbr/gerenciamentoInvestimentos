@@ -7,7 +7,7 @@ namespace investimento.Domain.Models
     public class Usuario
     {
         [Key]
-        public int id { get; private set; }
+        public int? id { get; private set; }
         [Required]
         public string nome { get; private set; }
         [Required]
@@ -25,7 +25,7 @@ namespace investimento.Domain.Models
             this.data_cadastro = DateTime.UtcNow;
         }
 
-        public Usuario(int id, string nome, string email, string senha, DateTime data_cadastro)
+        public Usuario(int? id, string nome, string email, string senha, DateTime data_cadastro)
         {
             this.id = id;
             this.nome = nome;

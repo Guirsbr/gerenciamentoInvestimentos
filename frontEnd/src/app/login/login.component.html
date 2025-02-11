@@ -1,16 +1,14 @@
-
-<form>
+<h1>Login</h1>
+<form [formGroup]="form" (ngSubmit)="fazerLogin()">
     <div>
-        <label> Email </label>
-        <input type="text" [(ngModel)]="email" name="email" required>
+        <input type="text" placeholder="Email" formControlName="email"/>
     </div>
-
     <div>
-        <label> Senha </label>
-        <input type="text" [(ngModel)]="senha" name="senha" required>
+        <input type="password" placeholder="Senha" formControlName="senha"/>
     </div>
-
-    <button (click)="fazerLogin()"> Iniciar sessão </button>
+    <div>
+        <button type="submit">Fazer login</button>
+    </div>
 </form>
 
 <p> Token: {{ authResult.token }} </p>

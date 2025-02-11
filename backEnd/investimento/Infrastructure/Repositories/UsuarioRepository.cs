@@ -17,16 +17,14 @@ namespace investimento.Infrastructure.Repositories
             return _context.Usuarios.ToList();
         }
 
-        public List<Usuario> GetUserByEmail(string email)
+        public Usuario? GetUserByEmail(string email)
         {
-            var usuario = _context.Usuarios.FromSql($"SELECT * FROM usuario WHERE email={email}").ToList();
-            return usuario;
+            return _context.Usuarios.FirstOrDefault(u => u.email == email);
         }
 
-        public List<Usuario> GetUserByEmailAndPassword(string email, string senha)
+        public Usuario? GetUserByEmailAndPassword(string email, string senha)
         {
-            var usuario = _context.Usuarios.FromSql($"SELECT * FROM usuario WHERE email={email} AND senha={senha}").ToList();
-            return usuario;
+            return _context.Usuarios.FirstOrDefault(u => u.email == email && u.senha == senha);
         }
     }
 }

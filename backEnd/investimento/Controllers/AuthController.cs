@@ -23,22 +23,22 @@ namespace investimento.Controllers
 
             var authResult = new AuthResult("", false, "");
 
-            if (!usuario.Any())
+            if (usuario == null)
             {
                 return Ok(authResult);
             }
 
-            if (login.senha != usuario[0].senha)
+            if (login.senha != usuario.senha)
             {
                 return Ok(authResult);
             }
 
             var token = TokenService.GenerateToken(new Usuario(
-                usuario[0].id, usuario[0].nome, usuario[0].email, usuario[0].senha, usuario[0].data_cadastro));
+                usuario.id, usuario.nome, usuario.email, usuario.senha, usuario.data_cadastro));
 
             authResult.token = (string)token;
             authResult.result = true;
-            authResult.nome = usuario[0].nome;
+            authResult.nome = usuario.nome;
 
             return Ok(authResult);
         }

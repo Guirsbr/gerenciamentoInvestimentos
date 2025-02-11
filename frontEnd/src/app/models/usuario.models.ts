@@ -3,5 +3,5 @@ export interface Usuario {
     nome: string,
     email: string,
     senha: string,
-    data_cadastro: string,
+    data_cadastro?: string,
 }

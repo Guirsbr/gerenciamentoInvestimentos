@@ -6,8 +6,8 @@
 
         List<Usuario> Get();
 
-        List<Usuario> GetUserByEmail(string email);
+        Usuario? GetUserByEmail(string email);
 
-        List<Usuario> GetUserByEmailAndPassword(string email, string senha);
+        Usuario? GetUserByEmailAndPassword(string email, string senha);
     }
 }

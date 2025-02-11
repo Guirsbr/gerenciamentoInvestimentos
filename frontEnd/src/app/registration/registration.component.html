@@ -1,0 +1,15 @@
+<h1>Cadastro</h1>
+<form [formGroup]="form" (ngSubmit)="fazerCadastro()">
+    <div>
+        <input type="text" placeholder="Nome de Usuário" formControlName="nome"/>
+    </div>
+    <div>
+        <input type="text" placeholder="Email" formControlName="email"/>
+    </div>
+    <div>
+        <input type="password" placeholder="Senha" formControlName="senha"/>
+    </div>
+    <div>
+        <button type="submit">Cadastrar-se</button>
+    </div>
+</form>
