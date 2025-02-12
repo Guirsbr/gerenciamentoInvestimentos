@@ -9,36 +9,36 @@ namespace investimento.Controllers
     [Route("api/v1/auth")]
     public class AuthController : Controller
     {
-        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AuthController(IUsuarioRepository usuarioRepository)
+        public AuthController(IUserRepository userRepository)
         {
-            _usuarioRepository = usuarioRepository ?? throw new ArgumentNullException(nameof(usuarioRepository));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
         [HttpPost]
         public IActionResult Auth(LoginRequest login)
         {
-            var usuario = _usuarioRepository.GetUserByEmail(login.email);
+            var user = _userRepository.GetUserByEmail(login.email);
 
             var authResult = new AuthResult("", false, "");
 
-            if (usuario == null)
+            if (user == null)
             {
                 return Ok(authResult);
             }
 
-            if (login.senha != usuario.senha)
+            if (login.password != user.password)
             {
                 return Ok(authResult);
             }
 
-            var token = TokenService.GenerateToken(new Usuario(
-                usuario.id, usuario.nome, usuario.email, usuario.senha, usuario.data_cadastro));
+            var token = TokenService.GenerateToken(new User(
+                user.id, user.name, user.email, user.password, user.registration_date));
 
             authResult.token = (string)token;
             authResult.result = true;
-            authResult.nome = usuario.nome;
+            authResult.name = user.name;
 
             return Ok(authResult);
         }

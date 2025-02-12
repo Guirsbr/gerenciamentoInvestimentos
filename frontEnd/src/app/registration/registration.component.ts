@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UsuarioService } from '../services/usuario.service';
-import { Usuario } from '../models/usuario.models';
+import { UserService } from '../services/user.service';
+import { User } from '../models/user.models';
 
 @Component({
   selector: 'app-registration',
@@ -14,19 +14,19 @@ export class RegistrationComponent {
 
   form: FormGroup;
 
-  constructor(private usuarioService: UsuarioService){
+  constructor(private userService: UserService){
     this.form = new FormGroup({
-      nome: new FormControl("", Validators.required),
+      name: new FormControl("", Validators.required),
       email: new FormControl("", Validators.required),
-      senha: new FormControl("", Validators.required),
+      password: new FormControl("", Validators.required),
     })
   }
 
-  fazerCadastro(){
+  doRegistration(){
     if (this.form.valid) {
-      let usuario: Usuario = this.form.getRawValue();
+      let user: User = this.form.getRawValue();
       this.form.reset();
-      this.usuarioService.registrarUsuario(usuario).subscribe();
+      this.userService.registrateUser(user).subscribe();
     }
   }
   

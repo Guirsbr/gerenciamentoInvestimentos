@@ -1,20 +1,20 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
-import { Investimento } from "../models/investimento.models";
+import { Investment } from "../models/investment.models";
 
 @Injectable({
     providedIn:"root",
 })
-export class InvestimentoService {
+export class InvestmentService {
 
-    private url = `${environment.api}/investimento`
+    private url = `${environment.api}/investment`
 
     constructor(private httpClient: HttpClient) {
     }
 
-    obterInvestimentos(){
-        return this.httpClient.get<Investimento[]>(this.url)
+    getInvestments(){
+        return this.httpClient.get<Investment[]>(this.url)
     }
 
 }

@@ -15,17 +15,17 @@ export class LoginComponent {
   title = 'login';
 
   form: FormGroup;
-  authResult: AuthResult = {token: "", result: false, nome: ""};
+  authResult: AuthResult = {token: "", result: false, name: ""};
 
   constructor(private loginRequestService: LoginRequestService){
     this.form = new FormGroup({
           email: new FormControl("", Validators.required),
-          senha: new FormControl("", Validators.required),
+          password: new FormControl("", Validators.required),
     })
     this.loadData();
   }
 
-  fazerLogin(){
+  doLogin(){
     if (this.form.valid) {
       let loginRequest: LoginRequest = this.form.getRawValue();
       this.form.reset();

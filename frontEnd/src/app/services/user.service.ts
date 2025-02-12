@@ -1,35 +1,35 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
-import { Usuario } from "../models/usuario.models";
+import { User } from "../models/user.models";
 
 @Injectable({
     providedIn:"root",
 })
-export class UsuarioService {
+export class UserService {
 
     private url = `${environment.api}`
 
     constructor(private httpClient: HttpClient) {
     }
 
-    obterUsuario(email: string, senha: string){
-        return this.httpClient.get<Usuario>(this.url + "/usuario", {
+    getUser(email: string, password: string){
+        return this.httpClient.get<User>(this.url + "/user", {
             params: {
               email: `${email}`,
-              senha: `${senha}`
+              password: `${password}`
             }
           })
     }
 
-    obterUsuarios(){
-        return this.httpClient.get<Usuario[]>(this.url + "/usuarios")
+    getUsers(){
+        return this.httpClient.get<User[]>(this.url + "/users")
     }
 
-    registrarUsuario(usuario: Usuario){
+    registrateUser(user: User){
         const headers = new HttpHeaders({ "Content-Type": "application/json" });
         
-        return this.httpClient.post<null>(this.url + "/usuario", usuario, { headers })
+        return this.httpClient.post<null>(this.url + "/user", user, { headers })
     }
 
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { InvestimentoService } from './services/investimento.service';
-import { Investimento } from './models/investimento.models';
-import { UsuarioService } from './services/usuario.service';
-import { Usuario } from './models/usuario.models';
+import { InvestmentService } from './services/investment.service';
+import { Investment } from './models/investment.models';
+import { UserService } from './services/user.service';
+import { User } from './models/user.models';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from "./login/login.component";
 import { RegistrationComponent } from './registration/registration.component';
@@ -17,26 +17,26 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'frontEnd';
 
-  investimentos$ = new Observable<Investimento[]>();
-  usuarios$ = new Observable<Usuario[]>();
-  usuario$ = new Observable<Usuario>();
+  investment$ = new Observable<Investment[]>();
+  users$ = new Observable<User[]>();
+  user$ = new Observable<User>();
 
-  constructor(private investimentoService: InvestimentoService, private usuarioService: UsuarioService){
-    // this.obterInvestimentosDoUsuario();
-    // this.obterUsuariosDoSistema();
-    // this.obterUsuarioEspecifico();
+  constructor(private investmentervice: InvestmentService, private userService: UserService){
+    // this.getInvestmentsDoUser();
+    // this.getUsersDoSistema();
+    // this.getUserEspecifico();
   }
 
-  obterInvestimentosDoUsuario(){
-    this.investimentos$ = this.investimentoService.obterInvestimentos();
+  getUserInvestments(){
+    this.investment$ = this.investmentervice.getInvestments();
   }
 
-  obterUsuariosDoSistema(){
-    this.usuarios$ = this.usuarioService.obterUsuarios();
+  getSistemUsers(){
+    this.users$ = this.userService.getUsers();
   }
 
-  obterUsuarioEspecifico(){
-    this.usuario$ = this.usuarioService.obterUsuario("teste@hotmail.com", "12345");
+  getSpecificUser(){
+    this.user$ = this.userService.getUser("teste@hotmail.com", "12345");
   }
 
 }

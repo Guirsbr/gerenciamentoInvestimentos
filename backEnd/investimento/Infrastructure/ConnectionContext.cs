@@ -5,9 +5,9 @@ namespace investimento.Infrastructure
 {
     public class ConnectionContext : DbContext
     {
-        public DbSet<Investimento> Investimentos { get; set; }
+        public DbSet<Investment> Investments { get; set; }
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
               => optionsBuilder.UseNpgsql(

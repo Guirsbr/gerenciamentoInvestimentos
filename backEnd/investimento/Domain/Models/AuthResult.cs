@@ -9,13 +9,13 @@ namespace investimento.Domain.Models
         [Required]
         public bool result { get; set; }
         [Required]
-        public string nome { get; set; }
+        public string name { get; set; }
 
-        public AuthResult(string token, bool result, string nome)
+        public AuthResult(string token, bool result, string name)
         {
             this.token = token;
             this.result = result;
-            this.nome = nome;
+            this.name = name;
         }
 
     }

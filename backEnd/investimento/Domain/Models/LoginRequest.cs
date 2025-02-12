@@ -7,12 +7,12 @@ namespace investimento.Domain.Models
         [Required]
         public string email { get; init; }
         [Required]
-        public string senha { get; init; }
+        public string password { get; init; }
 
-        public LoginRequest(string email, string senha)
+        public LoginRequest(string email, string password)
         {
             this.email = email;
-            this.senha = senha;
+            this.password = password;
         }
     }
 }
