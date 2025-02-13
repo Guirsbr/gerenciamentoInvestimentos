@@ -4,13 +4,12 @@ import { Investment } from './models/investment.models';
 import { UserService } from './services/user.service';
 import { User } from './models/user.models';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from "./login/login.component";
-import { RegistrationComponent } from './registration/registration.component';
 import { Observable } from 'rxjs';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RegistrationComponent, LoginComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

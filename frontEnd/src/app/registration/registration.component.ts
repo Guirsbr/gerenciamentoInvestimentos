@@ -12,14 +12,14 @@ import { User } from '../models/user.models';
 export class RegistrationComponent {
   title = 'registration';
 
-  form: FormGroup;
+  form = new FormGroup({
+    name: new FormControl("", Validators.required),
+    email: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
+  })
 
   constructor(private userService: UserService){
-    this.form = new FormGroup({
-      name: new FormControl("", Validators.required),
-      email: new FormControl("", Validators.required),
-      password: new FormControl("", Validators.required),
-    })
+    
   }
 
   doRegistration(){

@@ -1,8 +1,9 @@
-<app-registration></app-registration>
-<app-login></app-login>
-<!-- <div *ngFor="let usuario of usuarios$ | async">
-    <p> {{ usuario.email }}</p>
-</div> -->
+<h1>INVESTIMENTOS</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></li>
+    <li><a routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">Cadastrar-se</a></li>
+  </ul>
+</nav>
 
-<!-- <button (click)="fazerCadastro()">teste</button> -->
-
+<router-outlet />
