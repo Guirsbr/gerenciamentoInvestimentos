@@ -5,7 +5,7 @@ import { UserService } from './services/user.service';
 import { User } from './models/user.models';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,22 +20,36 @@ export class AppComponent {
   users$ = new Observable<User[]>();
   user$ = new Observable<User>();
 
-  constructor(private investmentervice: InvestmentService, private userService: UserService){
-    // this.getInvestmentsDoUser();
-    // this.getUsersDoSistema();
-    // this.getUserEspecifico();
+  constructor(public userService: UserService, private readonly router: Router){
+    this.loadData();
   }
 
-  getUserInvestments(){
-    this.investment$ = this.investmentervice.getInvestments();
+  homePage(){
+    this.router.navigateByUrl("/");
   }
 
-  getSistemUsers(){
-    this.users$ = this.userService.getUsers();
+  loadData(){
+    if (typeof localStorage == 'undefined')
+      return
+
+    let token = localStorage.getItem("token") ?? "";
+    if (!token) {
+      this.userService.currentUserSig.set(null)
+      return
+    }
+
+    this.userService.validateUser(token)
+    .subscribe((response) => {
+        if (response.result) {
+          this.userService.currentUserSig.set(response);
+        } else {
+          this.userService.currentUserSig.set(null);
+        } 
+    });
   }
 
-  getSpecificUser(){
-    this.user$ = this.userService.getUser("teste@hotmail.com", "12345");
+  logout(){
+    localStorage.setItem("token", "");
+    this.userService.currentUserSig.set(null)
   }
-
 }

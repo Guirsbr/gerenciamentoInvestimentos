@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using investimento.Application.Services;
+﻿using investimento.Application.Services;
 using investimento.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 

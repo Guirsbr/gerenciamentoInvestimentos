@@ -8,6 +8,6 @@
 
         User? GetUserByEmail(string email);
 
-        User? GetUserByEmailAndPassword(string email, string password);
+        AuthResult GetUserByToken(string token);
     }
 }

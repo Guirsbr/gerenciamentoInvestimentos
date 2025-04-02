@@ -27,10 +27,10 @@ namespace investimento.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(string email, string password)
+        public IActionResult Get(string token)
         {
-            var user = _userRepository.GetUserByEmailAndPassword(email, password);
-            return Ok(user);
+            var authResult = _userRepository.GetUserByToken(token);
+            return Ok(authResult);
         }
     }
 }

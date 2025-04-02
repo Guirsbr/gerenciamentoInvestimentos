@@ -1,4 +1,7 @@
-﻿using investimento.Domain.Models;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using investimento.Domain.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace investimento.Infrastructure.Repositories
 {
@@ -21,9 +24,37 @@ namespace investimento.Infrastructure.Repositories
             return _context.Users.FirstOrDefault(u => u.email == email);
         }
 
-        public User? GetUserByEmailAndPassword(string email, string password)
+        public AuthResult GetUserByToken(string token)
         {
-            return _context.Users.FirstOrDefault(u => u.email == email && u.password == password);
+            var authResult = new AuthResult("", false, "");
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(Key.Secret);
+            try
+            {
+                tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                }, out _);
+
+                var jwtToken = tokenHandler.ReadJwtToken(token);
+                var jwtUserId = jwtToken.Payload["userId"];
+                var userId = Convert.ToInt32(jwtUserId);
+
+                var databaseUser = _context.Users.FirstOrDefault(u => u.id == userId);
+                if (databaseUser == null)
+                {
+                    return authResult;
+                }
+
+                return new AuthResult(token, true, databaseUser.name);
+            }
+            catch
+            {
+                return authResult;
+            }
         }
     }
 }

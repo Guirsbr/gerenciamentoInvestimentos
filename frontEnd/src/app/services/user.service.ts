@@ -1,35 +1,32 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Injectable, signal } from "@angular/core";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
 import { User } from "../models/user.models";
+import { AuthResult } from "../models/authResult.models";
 
 @Injectable({
     providedIn:"root",
 })
 export class UserService {
 
-    private url = `${environment.api}`
+    currentUserSig = signal<AuthResult | undefined | null>(undefined);
+
+    private url = `${environment.api}/user`
 
     constructor(private httpClient: HttpClient) {
     }
-
-    getUser(email: string, password: string){
-        return this.httpClient.get<User>(this.url + "/user", {
-            params: {
-              email: `${email}`,
-              password: `${password}`
-            }
-          })
-    }
-
-    getUsers(){
-        return this.httpClient.get<User[]>(this.url + "/users")
+    
+    validateUser(token: string){
+        const headers = new HttpHeaders({ "Authorization": `Bearer ${token}` });
+        const params = new HttpParams().set('token', token);
+        
+        return this.httpClient.get<AuthResult>(this.url, { headers, params });
     }
 
     registrateUser(user: User){
         const headers = new HttpHeaders({ "Content-Type": "application/json" });
         
-        return this.httpClient.post<null>(this.url + "/user", user, { headers })
+        return this.httpClient.post<null>(this.url, user, { headers })
     }
 
 }
