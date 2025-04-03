@@ -18,9 +18,8 @@ namespace investimento.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [Authorize]
         [HttpPost]
-        public IActionResult Add(InvestmentViewModel investmentView)
+        public IActionResult Add(InvestmentCreateViewModel investmentView)
         {
             var investment = new Investment(
                 investmentView.initial_value, investmentView.current_value, investmentView.rentability, 
@@ -29,7 +28,6 @@ namespace investimento.Controllers
             return Ok();
         }
 
-        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {

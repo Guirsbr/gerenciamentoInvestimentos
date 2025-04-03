@@ -6,15 +6,10 @@ namespace investimento.Domain.Models
     [Table("user")]
     public class User
     {
-        [Key]
         public int? id { get; private set; }
-        [Required]
         public string name { get; private set; }
-        [Required]
         public string email { get; private set; }
-        [Required]
         public string password { get; private set; }
-        [Required]
         public DateTime registration_date { get; private set; }
 
         public User(string name, string email, string password)

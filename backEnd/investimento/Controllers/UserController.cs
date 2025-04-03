@@ -19,7 +19,7 @@ namespace investimento.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(UserViewModel userView)
+        public IActionResult Add(UserCreateViewModel userView)
         {
             var user = new User(userView.name, userView.email, userView.password);
             _userRepository.Add(user);

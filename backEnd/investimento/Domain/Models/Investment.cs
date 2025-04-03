@@ -6,23 +6,14 @@ namespace investimento.Domain.Models
     [Table("investment")]
     public class Investment
     {
-        [Key]
         public int? id { get; private set; }
-        [Required]
         public double initial_value { get; private set; }
-        [Required]
         public double current_value { get; private set; }
-        [Required]
         public string rentability { get; private set; }
-        [Required]
         public DateTime update_date { get; private set; }
-        [Required]
         public DateTime registration_date { get; private set; }
-        [Required]
         public int id__bank { get; private set; }
-        [Required]
         public int id__investment_type { get; private set; }
-        [Required]
         public int id__user { get; private set; }
 
         public Investment(

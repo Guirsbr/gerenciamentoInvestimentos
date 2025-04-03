@@ -1,4 +1,6 @@
-﻿namespace investimento.Domain.Models
+﻿using investimento.Application.ViewModel;
+
+namespace investimento.Domain.Models
 {
     public interface IUserRepository
     {
@@ -8,6 +10,6 @@
 
         User? GetUserByEmail(string email);
 
-        AuthResult GetUserByToken(string token);
+        AuthResultViewModel GetUserByToken(string token);
     }
 }

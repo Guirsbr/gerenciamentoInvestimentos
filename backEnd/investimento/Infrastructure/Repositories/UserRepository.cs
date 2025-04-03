@@ -1,5 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using investimento.Application.ViewModel;
 using investimento.Domain.Models;
 using Microsoft.IdentityModel.Tokens;
 
@@ -24,9 +25,8 @@ namespace investimento.Infrastructure.Repositories
             return _context.Users.FirstOrDefault(u => u.email == email);
         }
 
-        public AuthResult GetUserByToken(string token)
+        public AuthResultViewModel GetUserByToken(string token)
         {
-            var authResult = new AuthResult("", false, "");
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Key.Secret);
             try
@@ -46,14 +46,14 @@ namespace investimento.Infrastructure.Repositories
                 var databaseUser = _context.Users.FirstOrDefault(u => u.id == userId);
                 if (databaseUser == null)
                 {
-                    return authResult;
+                    return new AuthResultViewModel();
                 }
 
-                return new AuthResult(token, true, databaseUser.name);
+                return new AuthResultViewModel(token, true, databaseUser.name);
             }
             catch
             {
-                return authResult;
+                return new AuthResultViewModel();
             }
         }
     }
