@@ -21,14 +21,14 @@ export class AppComponent {
   user$ = new Observable<User>();
 
   constructor(public userService: UserService, private readonly router: Router){
-    this.loadData();
+    this.automaticLogin();
   }
 
-  homePage(){
+  navigateHomePage(){
     this.router.navigateByUrl("/");
   }
 
-  loadData(){
+  automaticLogin(){
     if (typeof localStorage == 'undefined')
       return
 

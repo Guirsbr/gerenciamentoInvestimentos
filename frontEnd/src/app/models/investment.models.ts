@@ -6,6 +6,7 @@ export interface Investment {
     update_date: string,
     registration_date: string,
     id__bank: number,
+    bank_name: string,
     id__investment_type: number,
-    id__user: number,
+    investment_type_name: string,
 }

@@ -14,7 +14,9 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddTransient<IBankRepository, BankRepository>();
 builder.Services.AddTransient<IInvestmentRepository, InvestmentRepository>();
+builder.Services.AddTransient<IInvestmentTypeRepository, InvestmentTypeRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 

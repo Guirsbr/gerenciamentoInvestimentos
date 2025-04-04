@@ -1,6 +1,5 @@
 ﻿using investimento.Application.ViewModel;
 using investimento.Domain.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace investimento.Controllers

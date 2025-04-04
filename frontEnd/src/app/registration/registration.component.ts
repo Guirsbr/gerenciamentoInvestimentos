@@ -23,11 +23,13 @@ export class RegistrationComponent {
   }
 
   doRegistration(){
-    if (this.form.valid) {
-      let user: User = this.form.getRawValue();
-      this.form.reset();
-      this.userService.registrateUser(user).subscribe();
+    if (!this.form.valid){
+      return
     }
+
+    var user: User = this.form.getRawValue();
+    this.form.reset();
+    this.userService.registrateUser(user).subscribe();
   }
   
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthResult } from '../models/authResult.models';
 import { AuthService } from '../services/auth.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginRequest } from '../models/loginRequest.models';
@@ -20,26 +19,30 @@ export class LoginComponent {
     email: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required),
   })
-  
-  authResult: AuthResult = {token: "", result: false, name: ""};
 
   constructor(private authService: AuthService, private userService: UserService, private readonly router: Router){
   }
 
   doLogin(){
-    if (this.form.valid) {
-      let loginRequest: LoginRequest = this.form.getRawValue();
-      this.form.reset();
-      this.authService.requestAuth(loginRequest)
-        .subscribe(authResult => {
-          this.authResult = authResult;
-          if (this.authResult.result) {
-            localStorage.setItem("token", this.authResult.token);
-            this.userService.currentUserSig.set(authResult)
-            this.router.navigateByUrl("/");
-          }
-        });
+    if (!this.form.valid){
+      return
     }
+
+    let loginRequest: LoginRequest = this.form.getRawValue();
+    this.form.reset();
+    this.authService.requestAuth(loginRequest)
+      .subscribe(authResult => {
+        this.userService.currentUserSig.set(authResult)
+
+        if (!this.userService.currentUserSig())
+          return
+        if (!this.userService.currentUserSig()!.result){
+          return
+        }
+
+          localStorage.setItem("token", this.userService.currentUserSig()!.token);
+          this.router.navigateByUrl("/");
+      });
   }
 
 }

@@ -10,9 +10,9 @@ namespace investimento.Controllers
     public class InvestmentController : ControllerBase
     {
         private readonly IInvestmentRepository _investmentRepository;
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<InvestmentController> _logger;
 
-        public InvestmentController(IInvestmentRepository investmentRepository, ILogger<UserController> logger)
+        public InvestmentController(IInvestmentRepository investmentRepository, ILogger<InvestmentController> logger)
         {
             _investmentRepository = investmentRepository ?? throw new ArgumentNullException(nameof(investmentRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -29,10 +29,10 @@ namespace investimento.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetUserInvestments(string token)
         {
-            var investments = _investmentRepository.Get();
-            return Ok(investments);
+            var userInvestments = _investmentRepository.GetUserInvestments(token);
+            return Ok(userInvestments);
         }
     }
 }

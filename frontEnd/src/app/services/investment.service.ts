@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
 import { Investment } from "../models/investment.models";
 
@@ -13,10 +13,11 @@ export class InvestmentService {
     constructor(private httpClient: HttpClient) {
     }
 
-    getInvestments(token: string){
+    getUserInvestments(token: string){
         const headers = new HttpHeaders({ "Authorization": `Bearer ${token}` });
+        const params = new HttpParams().set('token', token);
 
-        return this.httpClient.get<Investment[]>(this.url, { headers })
+        return this.httpClient.get<Investment[]>(this.url, { headers, params })
     }
 
 }
