@@ -1,0 +1,43 @@
+.container-principal {
+    background-color: #f8f8f8;
+    height: auto;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    right: 15%;
+    padding: 0px;
+}
+
+header {
+    background-color: #7a55b9;
+    height: 10em;
+    display: flex;
+    color: #000000 !important; 
+}
+
+header h1 {
+    margin: 0;
+    line-height: 8vw;
+    width: 50%;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.header-text_container {
+    width: 50%;
+    display: flex;
+}
+
+.header-text_logAndReg {
+    line-height: 6vw;
+    width: 50%;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.header-text_logout {
+    line-height: 6vw;
+    font-size: 1vw;
+    text-align: center;
+    width: 100%;
+}

@@ -5,8 +5,8 @@ export interface Investment {
     rentability: string,
     update_date: string,
     registration_date: string,
-    id__bank: number,
+    id__bank?: number,
     bank_name: string,
-    id__investment_type: number,
+    id__investment_type?: number,
     investment_type_name: string,
 }

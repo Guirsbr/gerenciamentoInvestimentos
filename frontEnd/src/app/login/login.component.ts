@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LoginRequest } from '../models/loginRequest.models';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { InvestmentService } from '../services/investment.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class LoginComponent {
     password: new FormControl("", Validators.required),
   })
 
-  constructor(private authService: AuthService, private userService: UserService, private readonly router: Router){
+  constructor(private authService: AuthService, public investmentService: InvestmentService, private userService: UserService, private readonly router: Router){
   }
 
   doLogin(){
@@ -40,8 +41,9 @@ export class LoginComponent {
           return
         }
 
-          localStorage.setItem("token", this.userService.currentUserSig()!.token);
-          this.router.navigateByUrl("/");
+        localStorage.setItem("token", this.userService.currentUserSig()!.token);
+        this.router.navigateByUrl("/");
+        this.investmentService.getUserInvestments(authResult.token);
       });
   }
 

@@ -1,1 +1,9 @@
-<p>home page</p>
+<div *ngIf="investmentService.investment$ | async as investments">
+    <ul>
+      <li *ngFor="let investment of investments">
+        {{ investment.initial_value }} - {{ investment.current_value }} - {{ investment.rentability }} - 
+        {{ investment.investment_type_name }} - {{ investment.bank_name }} - 
+        {{ investment.update_date }} - {{ investment.registration_date }}
+      </li>
+    </ul>
+</div>
