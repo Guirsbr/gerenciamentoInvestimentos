@@ -10,17 +10,21 @@
 
 header {
     background-color: #7a55b9;
-    height: 10em;
+    height: 18vh;
     display: flex;
-    color: #000000 !important; 
 }
 
-header h1 {
-    margin: 0;
-    line-height: 8vw;
-    width: 50%;
-    font-size: 1.5vw;
+header span {
+    padding: 0.5em;
+    cursor:pointer;
+}
+
+.header-title_container {
+    line-height: 5em;
+    font-size: 2em;
     text-align: center;
+    text-transform: uppercase;
+    width: 50%;
 }
 
 .header-text_container {
@@ -28,16 +32,38 @@ header h1 {
     display: flex;
 }
 
-.header-text_logAndReg {
-    line-height: 6vw;
-    width: 50%;
-    font-size: 1vw;
+.header-text_container p {
+    line-height: 4.6em;
+    font-size: 1.5em;
     text-align: center;
 }
 
+.header-text_container span {
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.header-text_container span:hover {
+    color: #ffffff;
+    background-color: #46316b;
+}
+
+.header-text_logAndReg {
+    width: 50%;
+}
+
 .header-text_logout {
-    line-height: 6vw;
-    font-size: 1vw;
-    text-align: center;
     width: 100%;
+}
+
+main {
+    height: 74.3vh;
+}
+
+footer {
+    background-color: #7a55b9;
+    height: 6vh;
+    text-align: center;
+    line-height: 3.3em;
+    font-size: 1em;
 }

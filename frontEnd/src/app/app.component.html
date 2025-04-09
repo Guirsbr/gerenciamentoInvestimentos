@@ -1,6 +1,6 @@
 <div class="container-principal">
   <header>
-    <h1 (click)="navigateHomePage()">INVESTIMENTOS</h1>
+    <h1 class="header-title_container"><span (click)="navigateHomePage()">Investimentos</span></h1>
     <div *ngIf="userService.currentUserSig() === null" class="header-text_container">
       <p class="header-text_logAndReg"><span routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</span></p>
       <p class="header-text_logAndReg"><span routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">Cadastrar-se</span></p>
@@ -9,6 +9,12 @@
       <p class="header-text_logout"><span (click)="logout()">Logout</span></p>
     </div>
   </header>
+  
+  <main>
+    <router-outlet />
+  </main>
 
-  <router-outlet />
+  <footer>
+    <p>© {{ current_year }} Guilherme Silveira Emanuelli. All rights reserved.</p>
+  </footer>
 </div>

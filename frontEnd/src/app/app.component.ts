@@ -13,7 +13,8 @@ import { InvestmentService } from './services/investment.service';
 export class AppComponent {
   title = 'frontEnd';
 
-  token = "";
+  
+  current_year: number = new Date().getFullYear();
 
   constructor(public investmentService: InvestmentService, public userService: UserService, private readonly router: Router){
     this.automaticLogin();
