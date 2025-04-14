@@ -1,11 +1,13 @@
-﻿using investimento.Application.ViewModel;
-using investimento.Domain.Models;
+﻿using Asp.Versioning;
+using investimento.Application.ViewModel;
+using investimento.Domain.Models.UserAggregate;
 using Microsoft.AspNetCore.Mvc;
 
-namespace investimento.Controllers
+namespace investimento.Controllers.v1
 {
     [ApiController]
-    [Route("api/v1/user")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
@@ -18,18 +20,11 @@ namespace investimento.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(UserCreateViewModel userView)
+        public IActionResult AddUser(UserCreateViewModel userView)
         {
             var user = new User(userView.name, userView.email, userView.password);
             _userRepository.Add(user);
             return Ok();
-        }
-
-        [HttpGet]
-        public IActionResult Get(string token)
-        {
-            var authResult = _userRepository.GetUserByToken(token);
-            return Ok(authResult);
         }
     }
 }

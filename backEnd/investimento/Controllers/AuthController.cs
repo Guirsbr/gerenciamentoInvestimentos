@@ -1,6 +1,6 @@
 ﻿using investimento.Application.Services;
 using investimento.Application.ViewModel;
-using investimento.Domain.Models;
+using investimento.Domain.Models.UserAggregate;
 using Microsoft.AspNetCore.Mvc;
 
 namespace investimento.Controllers
@@ -17,7 +17,7 @@ namespace investimento.Controllers
         }
 
         [HttpPost]
-        public IActionResult Auth(LoginRequestViewModel login)
+        public ActionResult<AuthResultViewModel> UserAuth(LoginRequestViewModel login)
         {
             var user = _userRepository.GetUserByEmail(login.email);
 
@@ -35,6 +35,13 @@ namespace investimento.Controllers
                 user.id, user.name, user.email, user.password, user.registration_date));
             var authResult = new AuthResultViewModel((string)token, true, user.name);
 
+            return Ok(authResult);
+        }
+
+        [HttpGet]
+        public ActionResult<AuthResultViewModel> ValidateUser(string token)
+        {
+            var authResult = _userRepository.ValidateUser(token);
             return Ok(authResult);
         }
     }

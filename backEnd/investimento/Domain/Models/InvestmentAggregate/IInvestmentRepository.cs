@@ -1,6 +1,6 @@
 ﻿using investimento.Application.ViewModel;
 
-namespace investimento.Domain.Models
+namespace investimento.Domain.Models.InvestmentAggregate
 {
     public interface IInvestmentRepository
     {

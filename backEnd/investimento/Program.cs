@@ -1,6 +1,10 @@
 using System.Text;
+using Asp.Versioning;
 using investimento;
-using investimento.Domain.Models;
+using investimento.Domain.Models.BankAggregate;
+using investimento.Domain.Models.InvestmentAggregate;
+using investimento.Domain.Models.InvestmentTypeAggregate;
+using investimento.Domain.Models.UserAggregate;
 using investimento.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -13,6 +17,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddApiVersioning(o =>
+{
+    o.AssumeDefaultVersionWhenUnspecified = true;
+    o.DefaultApiVersion = new ApiVersion(1, 0);
+})
+.AddApiExplorer(options =>
+  {
+      options.GroupNameFormat = "'v'VVV";
+      // Replace the placeholder with the actual version
+      options.SubstituteApiVersionInUrl = true;
+  });
 
 builder.Services.AddTransient<IBankRepository, BankRepository>();
 builder.Services.AddTransient<IInvestmentRepository, InvestmentRepository>();

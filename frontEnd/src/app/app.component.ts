@@ -3,6 +3,7 @@ import { UserService } from './services/user.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { InvestmentService } from './services/investment.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   
   current_year: number = new Date().getFullYear();
 
-  constructor(public investmentService: InvestmentService, public userService: UserService, private readonly router: Router){
+  constructor(public authService: AuthService, public investmentService: InvestmentService, public userService: UserService, private readonly router: Router){
     this.automaticLogin();
   }
 
@@ -41,7 +42,6 @@ export class AppComponent {
       return
     }
       
-
     let token = localStorage.getItem("token") ?? "";
     if (!token) {
       this.userService.currentUserSig.set(null)
@@ -49,7 +49,7 @@ export class AppComponent {
       return
     }
 
-    this.userService.validateUser(token)
+    this.authService.validateUser(token)
     .subscribe((response) => {
         if (response.result) {
           this.userService.currentUserSig.set(response);

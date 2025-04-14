@@ -1,4 +1,4 @@
-﻿namespace investimento.Domain.Models
+﻿namespace investimento.Domain.Models.InvestmentTypeAggregate
 {
     public interface IInvestmentTypeRepository
     {

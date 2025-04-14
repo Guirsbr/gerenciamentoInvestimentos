@@ -1,4 +1,4 @@
-﻿using investimento.Domain.Models;
+﻿using investimento.Domain.Models.BankAggregate;
 
 namespace investimento.Infrastructure.Repositories
 {

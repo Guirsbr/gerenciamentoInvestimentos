@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using investimento.Domain.Models;
 using investimento.Application.ViewModel;
+using investimento.Domain.Models.BankAggregate;
+using investimento.Domain.Models.InvestmentAggregate;
+using investimento.Domain.Models.UserAggregate;
+using investimento.Domain.Models.InvestmentTypeAggregate;
 
 namespace investimento.Infrastructure
 {
@@ -25,7 +28,35 @@ namespace investimento.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<InvestmentResponseViewModel>().HasNoKey().ToView(null);
+            modelBuilder.Entity<InvestmentResponseViewModel>()
+                .HasNoKey()
+                .ToView(null);
+
+            // Migrations Configuration
+            modelBuilder.Entity<Bank>()
+                .HasKey(i => i.id);
+
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.email)
+                .IsUnique();
+
+            modelBuilder.Entity<Investment>()
+                .HasOne(i => i.bank)
+                .WithMany()
+                .HasForeignKey(i => i.id__bank)
+                .HasConstraintName("FK__investment__bank");
+
+            modelBuilder.Entity<Investment>()
+                .HasOne(i => i.investmentType)
+                .WithMany()
+                .HasForeignKey(i => i.id__investment_type)
+                .HasConstraintName("FK__investment__investment_type");
+
+            modelBuilder.Entity<Investment>()
+                .HasOne(i => i.user)
+                .WithMany()
+                .HasForeignKey(i => i.id__user)
+                .HasConstraintName("FK__investment__user");
         }
     }
 }

@@ -1,12 +1,14 @@
-﻿using investimento.Application.ViewModel;
-using investimento.Domain.Models;
+﻿using Asp.Versioning;
+using investimento.Application.ViewModel;
+using investimento.Domain.Models.InvestmentAggregate;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace investimento.Controllers
+namespace investimento.Controllers.v1
 {
     [ApiController]
-    [Route("api/v1/investment")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class InvestmentController : ControllerBase
     {
         private readonly IInvestmentRepository _investmentRepository;
@@ -19,17 +21,17 @@ namespace investimento.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(InvestmentCreateViewModel investmentView)
+        public IActionResult AddInvestment(InvestmentCreateViewModel investmentView)
         {
             var investment = new Investment(
-                investmentView.initial_value, investmentView.current_value, investmentView.rentability, 
+                investmentView.initial_value, investmentView.current_value, investmentView.rentability,
                 investmentView.id__bank, investmentView.id__investment_type, investmentView.id__user);
             _investmentRepository.Add(investment);
             return Ok();
         }
 
         [HttpGet]
-        public IActionResult GetUserInvestments(string token)
+        public ActionResult<List<InvestmentResponseViewModel>> GetUserInvestments(string token)
         {
             var userInvestments = _investmentRepository.GetUserInvestments(token);
             return Ok(userInvestments);

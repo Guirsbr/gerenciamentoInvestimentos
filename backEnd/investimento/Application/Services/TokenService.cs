@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using investimento.Domain.Models;
+using investimento.Domain.Models.UserAggregate;
 using Microsoft.IdentityModel.Tokens;
 
 namespace investimento.Application.Services

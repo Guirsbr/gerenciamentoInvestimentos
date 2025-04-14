@@ -1,7 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using investimento.Application.ViewModel;
-using investimento.Domain.Models;
+using investimento.Domain.Models.InvestmentAggregate;
 using Microsoft.EntityFrameworkCore;
 
 namespace investimento.Infrastructure.Repositories

@@ -1,6 +1,6 @@
 ﻿using investimento.Application.ViewModel;
 
-namespace investimento.Domain.Models
+namespace investimento.Domain.Models.UserAggregate
 {
     public interface IUserRepository
     {
@@ -10,6 +10,6 @@ namespace investimento.Domain.Models
 
         User? GetUserByEmail(string email);
 
-        AuthResultViewModel GetUserByToken(string token);
+        AuthResultViewModel ValidateUser(string token);
     }
 }

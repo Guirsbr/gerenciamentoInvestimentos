@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace investimento.Domain.Models
+namespace investimento.Domain.Models.UserAggregate
 {
     [Table("user")]
     public class User
     {
+        [Key]
         public int? id { get; private set; }
         public string name { get; private set; }
         public string email { get; private set; }
@@ -17,7 +18,7 @@ namespace investimento.Domain.Models
             this.name = name;
             this.email = email;
             this.password = password;
-            this.registration_date = DateTime.UtcNow;
+            registration_date = DateTime.UtcNow;
         }
 
         public User(int? id, string name, string email, string password, DateTime registration_date)

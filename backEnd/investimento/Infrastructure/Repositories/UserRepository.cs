@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using investimento.Application.ViewModel;
-using investimento.Domain.Models;
+using investimento.Domain.Models.UserAggregate;
 using Microsoft.IdentityModel.Tokens;
 
 namespace investimento.Infrastructure.Repositories
@@ -25,7 +25,7 @@ namespace investimento.Infrastructure.Repositories
             return _context.Users.FirstOrDefault(u => u.email == email);
         }
 
-        public AuthResultViewModel GetUserByToken(string token)
+        public AuthResultViewModel ValidateUser(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Key.Secret);
