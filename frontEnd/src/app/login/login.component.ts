@@ -43,7 +43,7 @@ export class LoginComponent {
 
         localStorage.setItem("token", this.userService.currentUserSig()!.token);
         this.router.navigateByUrl("/");
-        this.investmentService.getUserInvestments(authResult.token);
+        this.investmentService.getUserInvestmentsFromApi(authResult.token);
       });
   }
 

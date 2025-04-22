@@ -54,7 +54,7 @@ export class AppComponent {
         if (response.result) {
           this.userService.currentUserSig.set(response);
           this.router.navigateByUrl("/");
-          this.investmentService.getUserInvestments(token);
+          this.investmentService.getUserInvestmentsFromApi(token);
         } else {
           this.userService.currentUserSig.set(null);
           localStorage.setItem("token", "");

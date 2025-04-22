@@ -1,9 +1,24 @@
-<div *ngIf="investmentService.investment$ | async as investments">
-    <ul>
-      <li *ngFor="let investment of investments">
-        {{ investment.initial_value }} - {{ investment.current_value }} - {{ investment.rentability }} - 
-        {{ investment.investment_type_name }} - {{ investment.bank_name }} - 
-        {{ investment.update_date }} - {{ investment.registration_date }}
-      </li>
-    </ul>
+<div class="container-home" *ngIf="investmentService.getInvestments() | async as investments">
+    <div class="table-container">
+        <div class="table-line">
+            <div class="table-cell table-header">Valor Inicial</div>
+            <div class="table-cell table-header">Valor Atual</div>
+            <div class="table-cell table-header">Rentabilidade</div>
+            <div class="table-cell table-header">Investimento</div>
+            <div class="table-cell table-header">Banco</div>
+            <div class="table-cell table-header">Atualização</div>
+            <div class="table-cell table-header">Criação</div>
+        </div>
+        <div class="table-line"  *ngFor="let investment of investments">
+            <div class="table-cell">{{ investment.initial_value }}</div>
+            <div class="table-cell">{{ investment.current_value }}</div>
+            <div class="table-cell">{{ investment.rentability }}</div>
+            <div class="table-cell">{{ investment.investment_type_name }}</div>
+            <div class="table-cell">{{ investment.bank_name }}</div>
+            <div class="table-cell">{{ investment.update_date }}</div>
+            <div class="table-cell">{{ investment.registration_date }}</div>
+        </div>
+    </div>
 </div>
+
+

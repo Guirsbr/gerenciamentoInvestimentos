@@ -23,7 +23,7 @@ export class AuthService {
     validateUser(token: string){
         const params = new HttpParams().set('token', token);
         
-        return this.httpClient.get<AuthResult>(this.url, { params });
+        return this.httpClient.get<AuthResult>(this.url + "/auth", { params });
     }
 
 }

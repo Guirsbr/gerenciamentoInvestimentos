@@ -20,9 +20,10 @@ header span {
 }
 
 .header-title_container {
-    line-height: 5em;
     font-size: 2em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     width: 50%;
 }
@@ -33,9 +34,10 @@ header span {
 }
 
 .header-text_container p {
-    line-height: 4.6em;
     font-size: 1.5em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-text_container span {
@@ -57,13 +59,15 @@ header span {
 }
 
 main {
-    height: 74.3vh;
+    height: 76vh;
 }
 
 footer {
     background-color: #7a55b9;
     height: 6vh;
-    text-align: center;
-    line-height: 3.3em;
     font-size: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

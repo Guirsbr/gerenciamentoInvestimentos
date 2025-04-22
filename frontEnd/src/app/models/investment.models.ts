@@ -1,7 +1,7 @@
 export interface Investment {
     id?: number,
-    initial_value: boolean,
-    current_value: boolean,
+    initial_value: number | string,
+    current_value: number | string,
     rentability: string,
     update_date: string,
     registration_date: string,

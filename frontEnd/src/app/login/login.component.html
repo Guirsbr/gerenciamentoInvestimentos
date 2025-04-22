@@ -1,14 +1,16 @@
 <div class="login-container">
-    <h2>Login</h2>
-    <form [formGroup]="form" (ngSubmit)="doLogin()">
-        <div>
-            <input type="text" placeholder="Email" formControlName="email"/>
-        </div>
-        <div class="form-lastInput">
-            <input type="password" placeholder="Senha" formControlName="password"/>
-        </div>
-        <div>
-            <button type="submit">Fazer login</button>
-        </div>
-    </form>
+    <div>
+        <h2>Login</h2>
+        <form [formGroup]="form" (ngSubmit)="doLogin()">
+            <div>
+                <input type="text" placeholder="Email" formControlName="email"/>
+            </div>
+            <div class="form-lastInput">
+                <input type="password" placeholder="Senha" formControlName="password"/>
+            </div>
+            <div>
+                <button type="submit">Fazer login</button>
+            </div>
+        </form>
+    </div>
 </div>
