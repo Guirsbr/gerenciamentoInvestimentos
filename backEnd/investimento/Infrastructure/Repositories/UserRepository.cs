@@ -2,6 +2,7 @@
 using System.Text;
 using investimento.Application.ViewModel;
 using investimento.Domain.Models.UserAggregate;
+using investimento.Helpers;
 using Microsoft.IdentityModel.Tokens;
 
 namespace investimento.Infrastructure.Repositories
@@ -27,34 +28,20 @@ namespace investimento.Infrastructure.Repositories
 
         public AuthResultViewModel ValidateUser(string token)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(Key.Secret);
-            try
-            {
-                tokenHandler.ValidateToken(token, new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                }, out _);
-
-                var jwtToken = tokenHandler.ReadJwtToken(token);
-                var jwtUserId = jwtToken.Payload["userId"];
-                var userId = Convert.ToInt32(jwtUserId);
-
-                var databaseUser = _context.Users.FirstOrDefault(u => u.id == userId);
-                if (databaseUser == null)
-                {
-                    return new AuthResultViewModel();
-                }
-
-                return new AuthResultViewModel(token, true, databaseUser.name);
-            }
-            catch
+            if (!TokenHandlerHelper.ValidateToken(token))
             {
                 return new AuthResultViewModel();
             }
+
+            var userId = TokenHandlerHelper.GetUserIdFromToken(token);
+
+            var databaseUser = _context.Users.FirstOrDefault(u => u.id == userId);
+            if (databaseUser == null)
+            {
+                return new AuthResultViewModel();
+            }
+
+            return new AuthResultViewModel(token, true, databaseUser.name);
         }
     }
 }

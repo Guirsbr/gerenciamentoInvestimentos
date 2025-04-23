@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using investimento.Application.ViewModel;
 using investimento.Domain.Models.InvestmentAggregate;
+using investimento.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace investimento.Infrastructure.Repositories
@@ -22,10 +23,7 @@ namespace investimento.Infrastructure.Repositories
 
         public List<InvestmentResponseViewModel> GetUserInvestments(string token)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadJwtToken(token);
-            var jwtUserId = jwtToken.Payload["userId"];
-            var userId = Convert.ToInt32(jwtUserId);
+            var userId = TokenHandlerHelper.GetUserIdFromToken(token);
 
             var investments = _context
             .Set<InvestmentResponseViewModel>()
