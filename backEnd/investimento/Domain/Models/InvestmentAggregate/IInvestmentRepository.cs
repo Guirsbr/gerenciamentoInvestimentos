@@ -8,6 +8,8 @@ namespace investimento.Domain.Models.InvestmentAggregate
 
         List<Investment> Get();
 
-        public List<InvestmentResponseViewModel> GetUserInvestments(string token);
+        List<InvestmentResponseViewModel> GetUserInvestments(string token);
+
+        Boolean DeleteUserInvestment(int investmentId, string token);
     }
 }

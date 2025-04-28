@@ -1,9 +1,6 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using investimento.Application.ViewModel;
+﻿using investimento.Application.ViewModel;
 using investimento.Domain.Models.UserAggregate;
 using investimento.Helpers;
-using Microsoft.IdentityModel.Tokens;
 
 namespace investimento.Infrastructure.Repositories
 {

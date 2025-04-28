@@ -36,5 +36,11 @@ namespace investimento.Controllers.v1
             var userInvestments = _investmentRepository.GetUserInvestments(token);
             return Ok(userInvestments);
         }
+
+        [HttpDelete]
+        public ActionResult<Boolean> DeleteUserInvestment(int investmentId, string token)
+        {
+            return Ok(_investmentRepository.DeleteUserInvestment(investmentId, token));
+        }
     }
 }

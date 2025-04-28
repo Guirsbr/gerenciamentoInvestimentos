@@ -1,4 +1,4 @@
-<div class="container-home" *ngIf="investmentService.getInvestments() | async as investments">
+<div class="container-home" *ngIf="investmentService.getUserInvestments() | async as investments">
     <div class="table-container">
         <div class="table-line">
             <div class="table-cell table-header">Valor Inicial</div>
@@ -8,8 +8,9 @@
             <div class="table-cell table-header">Banco</div>
             <div class="table-cell table-header">Atualização</div>
             <div class="table-cell table-header">Criação</div>
+            <div class="table-cell table-header"></div>
         </div>
-        <div class="table-line"  *ngFor="let investment of investments">
+        <div class="table-line" *ngFor="let investment of investments">
             <div class="table-cell">{{ investment.initial_value }}</div>
             <div class="table-cell">{{ investment.current_value }}</div>
             <div class="table-cell">{{ investment.rentability }}</div>
@@ -17,6 +18,7 @@
             <div class="table-cell">{{ investment.bank_name }}</div>
             <div class="table-cell">{{ investment.update_date }}</div>
             <div class="table-cell">{{ investment.registration_date }}</div>
+            <div class="table-cell" *ngIf="investment.id"><button (click)="deleteUserInvestment(investment.id)">Excluir</button></div>
         </div>
     </div>
 </div>

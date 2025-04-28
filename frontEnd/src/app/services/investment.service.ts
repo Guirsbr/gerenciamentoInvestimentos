@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { environment } from "../../environments/environment.development";
 import { Investment } from "../models/investment.models";
 import { map, Observable } from "rxjs";
+import { AuthService } from "./auth.service";
 
 @Injectable({
     providedIn:"root",
@@ -13,25 +14,24 @@ export class InvestmentService {
 
     private url = `${environment.api}/investment`
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private authService: AuthService) {
     }
 
-    getInvestments() {
+    getUserInvestments() : Observable<Investment[]> {
         return this.investments$
     }
 
-    getUserInvestmentsFromApi(token: string | undefined){
+    getUserInvestmentsFromApi(token: string | undefined) : Observable<Investment[]> | void {
         if (!token)
             return
 
-        const headers = new HttpHeaders({ "Authorization": `Bearer ${token}` });
         const params = new HttpParams().set('token', token);
 
-        this.investments$ = this.httpClient.get<Investment[]>(this.url, { headers, params })
+        this.investments$ = this.httpClient.get<Investment[]>(this.url, { params })
 
         this.investments$ = this.investments$.pipe(
             map(investments => {
-              return investments.map(investment => {
+                return investments.map(investment => {
 
                 if (typeof investment.initial_value === "number")
                     investment.initial_value = investment.initial_value.toFixed(2);
@@ -46,7 +46,15 @@ export class InvestmentService {
                 return investment;
               });
             })
-          );
+        );
+    }
+
+    deleteUserInvestmentFromApi(investmentId: number) : void {
+        const params = new HttpParams()
+            .set('investmentId', investmentId)
+            .set('token', this.authService.getToken());
+
+        this.httpClient.delete<boolean>(this.url, { params }).subscribe()
     }
 
 }

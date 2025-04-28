@@ -21,7 +21,7 @@ export class AppComponent {
     this.automaticLogin();
   }
 
-  navigateHomePage(){
+  navigateHomePage() : void {
     if (this.userService.currentUserSig()){
       this.router.navigateByUrl("/");
     } else {
@@ -29,27 +29,21 @@ export class AppComponent {
     }  
   }
 
-  logout(){
+  logoutUser() : void {
     localStorage.setItem("token", "");
     this.userService.currentUserSig.set(null)
     this.router.navigateByUrl("/login");
   }
 
-  automaticLogin(){
-    if (typeof localStorage == 'undefined'){
-      this.userService.currentUserSig.set(null)
-      this.router.navigateByUrl("/login");
-      return
-    }
-      
-    let token = localStorage.getItem("token") ?? "";
+  automaticLogin() : void {
+    const token = this.authService.getToken()
     if (!token) {
       this.userService.currentUserSig.set(null)
       this.router.navigateByUrl("/login");
       return
     }
 
-    this.authService.validateUser(token)
+    this.authService.automaticLoginFromApi(token)
     .subscribe((response) => {
         if (response.result) {
           this.userService.currentUserSig.set(response);

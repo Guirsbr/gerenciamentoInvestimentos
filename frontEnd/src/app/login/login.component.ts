@@ -24,14 +24,14 @@ export class LoginComponent {
   constructor(private authService: AuthService, public investmentService: InvestmentService, private userService: UserService, private readonly router: Router){
   }
 
-  doLogin(){
+  loginUser() : void {
     if (!this.form.valid){
       return
     }
 
-    let loginRequest: LoginRequest = this.form.getRawValue();
+    const loginRequest: LoginRequest = this.form.getRawValue();
     this.form.reset();
-    this.authService.requestAuth(loginRequest)
+    this.authService.loginUserFromApi(loginRequest)
       .subscribe(authResult => {
         this.userService.currentUserSig.set(authResult)
 

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { InvestmentService } from '../services/investment.service';
-import { Investment } from '../models/investment.models';
-import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -19,5 +17,7 @@ export class HomeComponent {
     
   }
 
-  
+  deleteUserInvestment(investmentId: number) : void {
+    this.investmentService.deleteUserInvestmentFromApi(investmentId);
+  }
 }

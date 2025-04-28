@@ -22,14 +22,14 @@ export class RegistrationComponent {
     
   }
 
-  doRegistration(){
+  registrateUser(){
     if (!this.form.valid){
       return
     }
 
-    var user: User = this.form.getRawValue();
+    const user: User = this.form.getRawValue();
     this.form.reset();
-    this.userService.registrateUser(user).subscribe();
+    this.userService.registrateUserFromApi(user);
   }
   
 }

@@ -17,7 +17,7 @@ namespace investimento.Application.Services
                 {
                     new Claim("userId", user.id.ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddHours(3),
+                Expires = DateTime.UtcNow.AddDays(31),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

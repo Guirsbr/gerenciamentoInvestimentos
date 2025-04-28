@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using investimento.Application.ViewModel;
 using investimento.Domain.Models.InvestmentAggregate;
+using investimento.Domain.Models.UserAggregate;
 using investimento.Helpers;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,11 @@ namespace investimento.Infrastructure.Repositories
 
         public List<InvestmentResponseViewModel> GetUserInvestments(string token)
         {
+            if (!TokenHandlerHelper.ValidateToken(token))
+            {
+                return new List<InvestmentResponseViewModel>();
+            }
+
             var userId = TokenHandlerHelper.GetUserIdFromToken(token);
 
             var investments = _context
@@ -37,6 +43,26 @@ namespace investimento.Infrastructure.Repositories
             ").AsNoTracking().ToList();
 
             return investments;
+        }
+
+        public Boolean DeleteUserInvestment(int investmentId, string token)
+        {
+            if (!TokenHandlerHelper.ValidateToken(token))
+            {
+                return false;
+            }
+
+            var userId = TokenHandlerHelper.GetUserIdFromToken(token);
+            var investment = _context.Investments.FirstOrDefault(u => u.id == investmentId);
+
+            if (investment == null || investment.id__user != userId)
+            {
+                return false;
+            }
+
+            _context.Investments.Remove(investment);
+            _context.SaveChanges();
+            return true;
         }
     }
 }

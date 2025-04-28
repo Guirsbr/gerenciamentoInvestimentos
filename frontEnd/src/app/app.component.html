@@ -6,7 +6,7 @@
       <p class="header-text_logAndReg"><span routerLink="/registration" routerLinkActive="active" ariaCurrentWhenActive="page">Cadastrar-se</span></p>
     </div>
     <div *ngIf="userService.currentUserSig()" class="header-text_container">
-      <p class="header-text_logout"><span (click)="logout()">Logout</span></p>
+      <p class="header-text_logout"><span (click)="logoutUser()">Logout</span></p>
     </div>
   </header>
   

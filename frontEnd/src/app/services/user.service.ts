@@ -16,10 +16,10 @@ export class UserService {
     constructor(private httpClient: HttpClient) {
     }
 
-    registrateUser(user: User){
+    registrateUserFromApi(user: User) : void{
         const headers = new HttpHeaders({ "Content-Type": "application/json" });
         
-        return this.httpClient.post<null>(this.url, user, { headers })
+        this.httpClient.post<null>(this.url, user, { headers }).subscribe()
     }
 
 }
